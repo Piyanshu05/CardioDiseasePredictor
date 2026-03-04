@@ -4,7 +4,7 @@ A complete Machine Learning project that predicts cardiovascular disease risk us
 
 ## 🌐 Live Demo
 
-🔗 [CardioGuard AI on Render](https://your-app-name.onrender.com)
+🔗 [CardioGuard AI on Render](https://cardiodiseasepredictor.onrender.com)
 
 ## Models Used
 
