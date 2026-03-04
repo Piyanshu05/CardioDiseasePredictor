@@ -2,6 +2,10 @@
 
 A complete Machine Learning project that predicts cardiovascular disease risk using 6 ML algorithms, deployed as a Flask web application with a premium dark-themed UI.
 
+## 🌐 Live Demo
+
+🔗 [CardioGuard AI on Render](https://your-app-name.onrender.com)
+
 ## Models Used
 
 | Rank | Model | Accuracy |
@@ -29,24 +33,23 @@ A complete Machine Learning project that predicts cardiovascular disease risk us
 ├── app.py              # Flask backend
 ├── templates/          # Frontend HTML
 ├── static/             # CSS & JS
-├── cardio_train.csv    # Dataset
-├── run_pipeline.py     # Generates cleaned data, models & Flask files
+├── cardio_train.csv    # Original dataset
+├── cardio_cleaned.csv  # Cleaned dataset
+├── *.pkl               # Trained models & scaler
 └── requirements.txt    # Dependencies
 ```
 
-## Setup & Run
+## Deployment (Render)
 
-```bash
-git clone <repo-url>
-cd ML
-pip install -r requirements.txt
-python run_pipeline.py
-python app.py
-```
+This app is deployed on [Render](https://render.com) using the following config:
 
-Open **http://localhost:5000** in your browser.
+| Setting | Value |
+|---------|-------|
+| **Build Command** | `pip install -r requirements.txt` |
+| **Start Command** | `gunicorn app:app` |
+| **Instance Type** | Free |
 
-> `run_pipeline.py` generates the cleaned dataset, trains all 6 models, saves `.pkl` files, and creates the Flask app files.
+> Free instances spin down after inactivity — the first request may take ~30 seconds to load.
 
 ## Dataset
 
@@ -55,4 +58,5 @@ Open **http://localhost:5000** in your browser.
 ## Tech Stack
 
 - **ML:** scikit-learn, pandas, numpy, matplotlib, seaborn, plotly
-- **Web:** Flask, HTML/CSS/JS, Plotly.js
+- **Web:** Flask, Gunicorn, HTML/CSS/JS, Plotly.js
+- **Deployment:** Render
